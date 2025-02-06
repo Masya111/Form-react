@@ -1,0 +1,190 @@
+$light-green: hsl(148, 38%, 91%);
+$green: hsl(169, 82%, 27%);
+$red: hsl(0, 66%, 54%);
+$grey: hsl(186, 15%, 59%);
+$dark-grey: hsl(187, 24%, 22%);
+
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  outline: none;
+}
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  font-size: 16px;
+  font-family: "Karla", serif;
+  background-color: $light-green;
+  width: 100%;
+}
+.card-container {
+  width: 90%;
+  padding: 40px;
+  margin: 30px 0;
+  background-color: white;
+  border-radius: 7px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  input:hover,
+  input:active,
+  input:focus {
+    border: 2px solid $green !important;
+  }
+  .form-title {
+    margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    border-radius: 7px;
+    line-height: 3em;
+    border: 1px solid hsl(0, 0%, 0%, 0.6);
+    box-shadow: 0 0 2px black;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  label {
+    margin-bottom: 7px;
+  }
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+    legend {
+      margin-bottom: 10px;
+    }
+
+    .query-label {
+      border-radius: 7px;
+      border: 1px solid hsl(0, 0%, 0%, 0.6);
+      box-shadow: 0 0 2px black;
+      display: flex;
+      align-items: center;
+      line-height: 2.5em;
+      cursor: pointer;
+      &:hover,
+      &:focus,
+      &:active {
+        border: 2px solid $green;
+      }
+
+      input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        margin: 0 20px;
+        accent-color: $green;
+        cursor: pointer;
+      }
+    }
+  }
+
+  textarea {
+    height: 20em;
+    border: 1px solid hsl(0, 0%, 0%, 0.6);
+    box-shadow: 0 0 2px black;
+    border-radius: 7px;
+    resize: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 2px solid $green;
+    }
+  }
+  .checkbox-label {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    cursor: pointer;
+    input[type="checkbox"] {
+      transform: scale(1.3);
+      accent-color: $green;
+    }
+  }
+  button[type="submit"] {
+    background-color: $green;
+    color: white;
+    padding: 15px 0;
+    border-radius: 7px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+.popup-container {
+  background-color: $dark-grey;
+  border-radius: 10px;
+  position: fixed;
+  top: 10px;
+  align-self: center;
+  color: white;
+  text-align: start;
+  padding: 20px;
+  border: none;
+
+  .popup-title {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+.error {
+  border: 2px solid red !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 767px) {
+  .card-container {
+    max-width: 850px;
+
+    fieldset {
+      flex-direction: row;
+      gap: 15px;
+      .query-label {
+        flex: 1;
+      }
+    }
+
+    .names-container {
+      display: flex;
+      gap: 15px;
+
+      .input-container {
+        width: 100%;
+        flex: 1;
+      }
+    }
+
+    textarea {
+      height: 10rem;
+    }
+  }
+}

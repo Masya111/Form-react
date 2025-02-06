@@ -85,7 +85,7 @@ function PopupMessage() {
   return (
     <div className="popup-container hidden">
       <div className="popup-title">
-        <img src="public\icon-success-check.svg" alt="Success icon" />
+        <img src="\public\icon-success-check.svg" alt="Success icon" />
         <h3>Message Sent!</h3>
       </div>
       <p>Thanks for completing the form. We'll be in touch soon!</p>
